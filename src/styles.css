@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.graph {
+  border: 2px solid red;
+  background: black;
+}
+
+path {
+  stroke: lightgray;
+  stroke-width: 0.5px;
+  fill: #444;
+  opacity: 0.4;
+}

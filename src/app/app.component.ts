@@ -14,10 +14,11 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.http.get('/api').subscribe(data => {
+    this.http.get('http://pokeapi.co/api/v2/pokemon').subscribe(data => {
       // Read the result field from the JSON response.
       this.results = data;
       console.log(data)
     });
+    var test = 'blah';
   }
 }
