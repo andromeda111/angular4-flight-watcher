@@ -1,12 +1,153 @@
-/* You can add global styles to this file, and also import other style files */
 .graph {
-  border: 2px solid red;
-  background: black;
+  /*background: rgba(20,20,20,0.7);*/
 }
 
 path {
   stroke: lightgray;
   stroke-width: 0.5px;
   fill: #444;
-  opacity: 0.4;
+  opacity: 0.7;
+}
+
+body, html {
+  font-family: 'Roboto';
+}
+
+body {
+  background: #2b5876;
+  background: -webkit-linear-gradient(to top left, #4e4376, #2b5886);
+  background: linear-gradient(to top left, #4e4376, #2b5886);
+}
+
+.sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  background: -webkit-linear-gradient(to bottom right, rgba(100,100,100,0.4), rgba(0,0,0,0.4));
+  background: linear-gradient(to bottom right, rgba(100,100,100,0.4), rgba(0,0,0,0.4));
+}
+
+.title {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to bottom right, rgba(200,200,200,0.2), rgba(20,20,20,0.2));
+  border-bottom: 1px solid #79a;
+}
+
+.menu {
+  margin-top: 140px;
+  color: white;
+
+}
+.menu ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  text-align: center;
+}
+
+.menu ul li {
+  height: 48px;
+  line-height: 48px;
+  font-weight: 200;
+  /*background: linear-gradient(to right, rgba(200,200,200,0.2), rgba(75,75,75,0.2));*/
+  border-top: 1px solid #79a;
+}
+
+.menu ul li:last-child {
+  border-bottom: 1px solid #79a;
+}
+
+.menu ul li:hover {
+  height: 48px;
+  background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(125,125,125,0.2));
+}
+
+h4 {
+  color: white;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 300;
+  text-shadow: 2px 2px #888;
+}
+
+.content {
+  margin-left: 200px;
+  min-height: 100vh;
+  width: auto;
+  position: relative;
+  overflow: auto;
+  z-index: 1;
+}
+
+h2 {
+  color: white;
+  font-style: italic;
+  text-shadow: 1px 1px #888;
+  font-weight: 200;
+  padding-top: 20px;
+}
+
+h5 {
+  color: white;
+  font-weight: 200;
+}
+
+.header {
+  background: linear-gradient(to bottom right, rgba(200,200,200,0.2), rgba(75,75,75,0.2));
+  color: white;
+  font-weight: 200;
+}
+
+.top-section {
+  min-height: 300px;
+}
+
+.movie-tables {
+  margin-top: 20px;
+}
+.movie-tables-data {
+  background: rgba(0,0,0,0.2);
+  color: white;
+  font-size:0.8rem;
+  font-weight: 200;
+}
+
+img {
+  height: 32px;
+  padding:0;
+  margin:0;
+}
+.btn-group-sm>.btn, .btn-sm {
+  line-height: 1;
+}
+
+.btn {
+  border: none;
+}
+.btn-outline-light:hover{
+  background-color: rgba(200,200,200,0.3);
+
+}
+
+.btn-outline-light:active {
+  border: none;
+  box-shadow: none;
+}
+
+.table tr {
+  vertical-align: center;
+  line-height: 2rem;
+}
+
+.table td, .table th {
+  border-color: #79a;
+  padding: 0.5rem;
+}
+
+.table th {
+  border: none;
 }

@@ -1,4 +1,90 @@
-<h1>graph test</h1>
-<div class="graph">
+<div class="sidebar">
+  <div class="title">
+    <h4>Flight Watcher</h4>
+  </div>
+  <div class="menu">
+    <ul>
+      <li>Nav 1</li>
+      <li>Nav 2</li>
+      <li>Nav 3</li>
+    </ul>
+  </div>
+</div>
+<div class="content">
+  <div class="top-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 header">
+          <h2>Watch Some Flights</h2>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Movie List -->
+        <div class="col-md-6 section-movie-db">
+          <div class="movie-tables">
+            <h5>Database</h5>
+            <table class="table movie-tables-data">
+              <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Delete</th>
+                <th>Watch</th>
+              </tr>
+              <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
+                <td>Airplane!</td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">delete</i></button></td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
+              </tr>
+              <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
+                <td>Airplane! Really long movie name</td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">delete</i></button></td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Watch List -->
+        <div class="col-md-6 section-movie-watch">
+          <div class="movie-tables">
+            <h5>Watch List - (saved)</h5>
+            <table class="table movie-tables-data">
+              <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Remove</th>
+              </tr>
+              <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
+                <td>Airplane!</td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
+              </tr>
+              <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
+                <td>Airplane! Really long movie name</td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">remove</i></button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 header">
+          <h2>Flight Map</h2>
+          <span id="flight-time"></span><br>
+          <span id="flight-num"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 graph"></div>
+      </div>
+    </div>
+  </div>
 
 </div>
