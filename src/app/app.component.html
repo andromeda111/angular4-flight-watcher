@@ -22,7 +22,7 @@
         <!-- Movie List -->
         <div class="col-md-6 section-movie-db">
           <div class="movie-tables">
-            <h5>Database</h5>
+            <h5>Movies</h5>
             <table class="table movie-tables-data">
               <tr>
                 <th></th>
@@ -30,15 +30,9 @@
                 <th>Delete</th>
                 <th>Watch</th>
               </tr>
-              <tr>
-                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
-                <td>Airplane!</td>
-                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">delete</i></button></td>
-                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
-              </tr>
-              <tr>
-                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
-                <td>Airplane! Really long movie name</td>
+              <tr *ngFor="let movie of movieList">
+                <td><img src="{{ movie.img }}" alt=""></td>
+                <td>{{ movie.title }}</td>
                 <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">delete</i></button></td>
                 <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
               </tr>

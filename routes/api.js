@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
+const db = require('../db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var stuff = { title: 'Express', name: 'John' }
-  res.send(stuff);
-});
+  db('movies').select('*').then(movies => {
+    console.log(movies);
+    res.json(movies);
+  });
+})
 
 module.exports = router;
