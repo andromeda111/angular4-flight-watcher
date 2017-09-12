@@ -15,6 +15,7 @@ import { Movie } from './movie';
 export class AppComponent {
   title = 'app';
   movieList = [];
+  showForm = false;
 
   constructor(private moviesService: MoviesService){
     this.getMovies();
@@ -27,8 +28,15 @@ export class AppComponent {
 
   getMovies() {
     this.moviesService.getMovies().subscribe(data => this.movieList = data)
+    this.showForm = false;
   }
 
-
+  deleteMovie(movie) {
+    let movieId = movie.id
+    this.moviesService.deleteMovie(movieId).subscribe(result => {
+      console.log(result)
+      this.getMovies()
+    })
+  }
 
 }

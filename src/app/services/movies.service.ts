@@ -26,6 +26,11 @@ export class MoviesService {
       .do(this.logResponse)
   }
 
+  deleteMovie(movieId:number) {
+    return this.http.delete(this.apiUrl + `/delete/${movieId}`)
+    .do(this.logResponse)
+  }
+
   private logResponse(res: Response) {
     console.log(res)
   }

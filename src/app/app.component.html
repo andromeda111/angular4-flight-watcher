@@ -33,20 +33,21 @@
               <tr *ngFor="let movie of movieList">
                 <td><img src="{{ movie.img }}" alt=""></td>
                 <td>{{ movie.title }}</td>
-                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">delete</i></button></td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons" (click)="deleteMovie(movie)">delete</i></button></td>
                 <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
               </tr>
             </table>
           </div>
-          <div class="">
-            <movie-form (getMovieList)="getMovies()"></movie-form>
+          <div class="add-movie-section">
+            <button type="button" class="btn btn-sm btn-info" name="button" (click)="showForm = !showForm">Add Movie</button>
+            <movie-form *ngIf="showForm" (getMovieList)="getMovies()"></movie-form>
           </div>
         </div>
 
         <!-- Watch List -->
         <div class="col-md-6 section-movie-watch">
           <div class="movie-tables">
-            <h5>Watch List - (saved)</h5>
+            <h5>Watch List</h5>
             <table class="table movie-tables-data">
               <tr>
                 <th></th>

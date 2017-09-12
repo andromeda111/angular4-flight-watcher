@@ -20,10 +20,9 @@ router.post('/add', function(req, res, next) {
 })
 
 // Delete Movie from List
-router.delete('/delete', function(req, res, next) {
-  console.log('Delete: ' + req.body);
-  let id = req.body.id
-  db('movies').delete('*').where({id}).then(() => {
+router.delete('/delete/:id', function(req, res, next) {
+  let id = req.params.id
+  db('movies').del('*').where({id}).then(() => {
     res.send('success')
   })
 })

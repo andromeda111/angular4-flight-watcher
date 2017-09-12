@@ -1,20 +1,22 @@
-<form #movieForm="ngForm" (ngSubmit)="submitNewMovie()">
-  {{diagnostic}}
+<div class="add-movie-form">
+  <form class="form-inline" #movieForm="ngForm" (ngSubmit)="submitNewMovie(); movieForm.reset()">
+    {{diagnostic}}
 
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text"  class="form-control" id="title"
-            required
-           [(ngModel)]="newMovie.title" name="title">
-  </div>
+    <div class="form-group">
+      <label for="title" class=""></label>
+      <input type="text"  class="form-control form-control-sm mb-2 mr-sm-2 mb-sm-0" id="title"
+      required
+      [(ngModel)]="newMovie.title" name="title" placeholder="Title">
+    </div>
 
-  <div class="form-group">
-    <label for="img">img</label>
-    <input type="text" class="form-control" id="img"
-           required
-           [(ngModel)]="newMovie.img" name="img">
-  </div>
+    <div class="form-group">
+      <label for="img" class=""></label>
+      <input type="text" class="form-control form-control-sm mb-2 mr-sm-2 mb-sm-0" id="img"
+      required
+      [(ngModel)]="newMovie.img" name="img" placeholder="Poster URL">
+    </div>
 
-  <button type="submit" class="btn btn-success" [disabled]="!movieForm.form.valid">Submit</button>
+    <button type="submit" class="btn btn-sm btn-success" [disabled]="!movieForm.form.valid">Add</button>
 
-</form>
+  </form>
+</div>
