@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 header">
-          <h2>Watch Some Flights</h2>
+          <h2>Watch Some Flights...</h2>
         </div>
       </div>
       <div class="row">
@@ -34,7 +34,7 @@
                 <td><img src="{{ movie.img }}" alt=""></td>
                 <td>{{ movie.title }}</td>
                 <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons" (click)="deleteMovie(movie)">delete</i></button></td>
-                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons" (click)="addToWatch(movie)">add</i></button></td>
               </tr>
             </table>
           </div>
@@ -54,15 +54,10 @@
                 <th>Title</th>
                 <th>Remove</th>
               </tr>
-              <tr>
-                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
-                <td>Airplane!</td>
-                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">add</i></button></td>
-              </tr>
-              <tr>
-                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Airplane%21.jpg" alt=""></td>
-                <td>Airplane! Really long movie name</td>
-                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons">remove</i></button></td>
+              <tr *ngFor="let watch of watchList">
+                <td><img src="{{ watch.watch_img }}" alt=""></td>
+                <td>{{ watch.watch_title }}</td>
+                <td><button class="btn btn-sm btn-outline-light" type="button" name="button"><i class="material-icons" (click)="removeWatch(watch)">remove</i></button></td>
               </tr>
             </table>
           </div>
@@ -74,7 +69,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 header">
-          <h2>Flight Map</h2>
+          <h2>...While You Watch Some Flights</h2>
           <span id="flight-time"></span><br>
           <span id="flight-num"></span>
         </div>

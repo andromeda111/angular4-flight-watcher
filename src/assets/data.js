@@ -16,17 +16,17 @@ function appendData(data) {
   var mapTimeText = document.createTextNode(`${Date(data.time)}`);
   mapTimeEl.append(mapTimeText);
   var mapNumEl = document.getElementById('flight-num');
-  var mapNumText = document.createTextNode(`${data.states.length} Flights | via OpenSky-Network API`);
+  var mapNumText = document.createTextNode(`Rendering ${data.states.length} Flights | via OpenSky-Network API`);
   mapNumEl.append(mapNumText);
 }
 
 // Draw Map with Flight Data with D3
 function drawMap(flightData) {
-  var width = 900
-  var height = 500
+  var width = 1020
+  var height = 600
   var projection = d3.geo.mercator()
-    .center([0, 5])
-    .scale(150)
+    .center([0, 20])
+    .scale(180)
   var svg = d3.select('.graph').append('svg')
     .attr('width', width)
     .attr('height', height)

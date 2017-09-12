@@ -21,6 +21,13 @@ export class MoviesService {
     .catch(this.catchError)
   }
 
+  getWatch(){
+    return this.http.get(this.apiUrl + '/watch')
+    .do(this.logResponse)
+    .map(this.extractData)
+    .catch(this.catchError)
+  }
+
   postMovie(model:any){
     return this.http.post(this.apiUrl + '/add', model)
       .do(this.logResponse)
@@ -28,6 +35,16 @@ export class MoviesService {
 
   deleteMovie(movieId:number) {
     return this.http.delete(this.apiUrl + `/delete/${movieId}`)
+    .do(this.logResponse)
+  }
+
+  addToWatch(movie:any){
+    return this.http.post(this.apiUrl + '/watch/add', movie)
+      .do(this.logResponse)
+  }
+
+  removeWatch(watchId:number) {
+    return this.http.delete(this.apiUrl + `/watch/delete/${watchId}`)
     .do(this.logResponse)
   }
 

@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
-// import { Movie } from '../movie';
 
 @Component({
   selector: 'movie-form',
