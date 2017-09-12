@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { MoviesService } from './services/movies.service';
-// import { HttpClient, HttpEventType, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
-// import { Response } from '@angular/http';
-// import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +16,7 @@ export class AppComponent {
 
   constructor(private moviesService: MoviesService){
     this.getMovies()
-    this.getWatch();
+    this.getWatch()
   }
 
   getMovies() {
@@ -34,25 +31,22 @@ export class AppComponent {
   deleteMovie(movie) {
     let movieId = movie.id
     this.moviesService.deleteMovie(movieId).subscribe(result => {
-      console.log(result)
       this.getMovies()
-    })
+    });
   }
 
   addToWatch(movie) {
     this.moviesService.addToWatch(movie).subscribe(result => {
-      console.log(result)
-      this.getWatch();
+      this.getWatch()
       this.getMovies()
-    })
+    });
   }
   removeWatch(watch) {
     let watchId = watch.id
     this.moviesService.removeWatch(watchId).subscribe(result => {
-      console.log(result)
-      this.getWatch();
+      this.getWatch()
       this.getMovies()
-    })
+    });
   }
 
 }

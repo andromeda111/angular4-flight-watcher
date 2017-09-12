@@ -7,6 +7,7 @@ import { MoviesService } from '../services/movies.service';
   styleUrls: ['./movie-form.component.css'],
   providers: [MoviesService]
 })
+
 export class MovieFormComponent {
 
   newMovie = {};
@@ -17,11 +18,9 @@ export class MovieFormComponent {
   constructor(private moviesService: MoviesService) {}
 
   submitNewMovie() {
-    console.log(this.newMovie)
     this.moviesService.postMovie(this.newMovie).subscribe(data => {
-      console.log(data)
       this.refreshMovieList()
-    })
+    });
   }
 
   refreshMovieList() {

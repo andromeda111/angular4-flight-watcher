@@ -5,14 +5,12 @@ var db = require('../db');
 // Get Watch List
 router.get('/', function(req, res, next) {
   db('watch').select('*').then(watch => {
-    console.log(watch);
     res.json(watch);
   });
 })
 
 // Add to Watch List
 router.post('/add', function(req, res, next) {
-  console.log(req.body);
   var watch = {
     watch_title: req.body.title,
     watch_img: req.body.img,

@@ -7,14 +7,12 @@ router.get('/', function(req, res, next) {
   db('movies').whereNotExists(function() {
     this.select('*').from('watch').whereRaw('movies.id = watch.movie_id');
   }).then(movies => {
-    console.log('AFTER JOIN: ' + movies);
     res.json(movies);
   });
 })
 
 // Post to Movie List
 router.post('/add', function(req, res, next) {
-  console.log('Inserting: ' + req.body);
   var movie = req.body
   db('movies').insert(movie).then(() => {
     res.send('success');
