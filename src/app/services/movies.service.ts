@@ -21,6 +21,11 @@ export class MoviesService {
     .catch(this.catchError)
   }
 
+  postMovie(model:any){
+    return this.http.post(this.apiUrl + '/add', model)
+      .do(this.logResponse)
+  }
+
   private logResponse(res: Response) {
     console.log(res)
   }
@@ -33,5 +38,7 @@ export class MoviesService {
     console.log(error)
     return Observable.throw(error.json() || 'Server Error')
   }
+
+
 
 }
