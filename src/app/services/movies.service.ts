@@ -10,42 +10,46 @@ import 'rxjs/add/operator/catch';
 @Injectable ()
 export class MoviesService {
 
-  private apiUrl:string = 'http://localhost:3000/api'
+  private apiUrl:string = 'api'
 
   constructor(private http: Http) {}
 
   getMovies(){
-    return this.http.get(this.apiUrl)
-    .do(this.logResponse)
-    .map(this.extractData)
-    .catch(this.catchError)
+    return this.http.get(this.apiUrl + '/movies')
+      .do(this.logResponse)
+      .map(this.extractData)
+      .catch(this.catchError)
+  }
+
+  postMovie(model:any){
+    return this.http.post(this.apiUrl + '/movies/add', model)
+      .do(this.logResponse)
+      .catch(this.catchError)
+  }
+
+  deleteMovie(movieId:number) {
+    return this.http.delete(this.apiUrl + `/movies/delete/${movieId}`)
+      .do(this.logResponse)
+      .catch(this.catchError)
   }
 
   getWatch(){
     return this.http.get(this.apiUrl + '/watch')
-    .do(this.logResponse)
-    .map(this.extractData)
-    .catch(this.catchError)
-  }
-
-  postMovie(model:any){
-    return this.http.post(this.apiUrl + '/add', model)
       .do(this.logResponse)
-  }
-
-  deleteMovie(movieId:number) {
-    return this.http.delete(this.apiUrl + `/delete/${movieId}`)
-    .do(this.logResponse)
+      .map(this.extractData)
+      .catch(this.catchError)
   }
 
   addToWatch(movie:any){
     return this.http.post(this.apiUrl + '/watch/add', movie)
       .do(this.logResponse)
+      .catch(this.catchError)
   }
 
   removeWatch(watchId:number) {
     return this.http.delete(this.apiUrl + `/watch/delete/${watchId}`)
-    .do(this.logResponse)
+      .do(this.logResponse)
+      .catch(this.catchError)
   }
 
   private logResponse(res: Response) {
@@ -60,7 +64,5 @@ export class MoviesService {
     console.log(error)
     return Observable.throw(error.json() || 'Server Error')
   }
-
-
 
 }
