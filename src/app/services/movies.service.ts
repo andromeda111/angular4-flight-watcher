@@ -15,39 +15,39 @@ export class MoviesService {
 
   getMovies(){
     return this.http.get(this.apiUrl + '/movies')
-      .do(this.logResponse)
+      // .do(this.logResponse)
       .map(this.extractData)
       .catch(this.catchError)
   }
 
   postMovie(model:any){
     return this.http.post(this.apiUrl + '/movies/add', model)
-      .do(this.logResponse)
+      // .do(this.logResponse)
       .catch(this.catchError)
   }
 
   deleteMovie(movieId:number) {
     return this.http.delete(this.apiUrl + `/movies/delete/${movieId}`)
-      .do(this.logResponse)
+      // .do(this.logResponse)
       .catch(this.catchError)
   }
 
   getWatch(){
     return this.http.get(this.apiUrl + '/watch')
-      .do(this.logResponse)
+      // .do(this.logResponse)
       .map(this.extractData)
       .catch(this.catchError)
   }
 
   addToWatch(movie:any){
     return this.http.post(this.apiUrl + '/watch/add', movie)
-      .do(this.logResponse)
+      // .do(this.logResponse)
       .catch(this.catchError)
   }
 
   removeWatch(watchId:number) {
     return this.http.delete(this.apiUrl + `/watch/delete/${watchId}`)
-      .do(this.logResponse)
+      // .do(this.logResponse)
       .catch(this.catchError)
   }
 

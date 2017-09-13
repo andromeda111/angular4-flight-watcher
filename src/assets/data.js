@@ -3,7 +3,6 @@ var incomingData
 
 oReq.onload = function(e) {
   incomingData = JSON.parse(oReq.responseText)
-  console.log(Date(incomingData.time))
   drawMap(incomingData)
   appendData(incomingData)
 }
@@ -33,8 +32,6 @@ function drawMap(flightData) {
   var path = d3.geo.path()
     .projection(projection)
   var g = svg.append('g')
-
-  console.log(flightData.states.map((num, a, b) => b[5]))
 
   d3.json('https://unpkg.com/world-atlas@1/world/110m.json', function(error, topology) {
 
