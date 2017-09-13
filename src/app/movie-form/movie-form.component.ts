@@ -10,7 +10,10 @@ import { MoviesService } from '../services/movies.service'
 
 export class MovieFormComponent {
 
-  newMovie = {}
+  newMovie = {
+    img: '',
+    title: ''
+  }
   submitted = false
 
   @Output() getMovieList = new EventEmitter<string>()
