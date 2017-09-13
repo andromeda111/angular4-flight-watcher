@@ -1,28 +1,38 @@
-# Angular4Sandbox
+Angular 4 Flight Watcher
+=====================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
+This is a very simple, quick-and-dirty full-stack app I built over a few days to learn the basics of Angular 4 and D3. (please disregard some of the styling)
 
-## Development server
+It includes a movie selection/watch list. Movies can be added/deleted to/from the database, and from there added/removed to/from a "watch" list. Very simple.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It also includes a map rendered with D3 showing the latitude/longitude location of several thousand current flights around the world, sourced from the OpenSky Network's API.
 
-## Code scaffolding
+Sept. 12, 2017
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<img src="docs/angular4-flight-watcher-thumb.png">
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+The repository can be downloaded and run as a web application locally.
 
-## Running unit tests
+1. Run npm install to download necessary dependencies.
+2. In the terminal, build the distribution files and start the Node server:
+```
+$ ng build
+$ npm run start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technology
+Front:
+Angular 4, HTML5/CSS3, Typescript, D3
 
-## Running end-to-end tests
+Server and Database:
+Node.js, Express, PostgreSQL, Knex.js
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Services:
+Heroku, OpenSky Network API
 
-## Further help
+## Developed By | September 2017:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+John Seymour: https://github.com/andromeda111
+Email: jmseymour111@gmail.com
