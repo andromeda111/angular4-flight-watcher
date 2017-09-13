@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MoviesService } from './services/movies.service';
+import { Component } from '@angular/core'
+import { MoviesService } from './services/movies.service'
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,9 @@ import { MoviesService } from './services/movies.service';
 
 export class AppComponent {
 
-  movieList = [];
-  watchList = [];
-  showForm = false;
+  movieList = []
+  watchList = []
+  showForm = false
 
   constructor(private moviesService: MoviesService){
     this.getMovies()
@@ -21,7 +21,7 @@ export class AppComponent {
 
   getMovies() {
     this.moviesService.getMovies().subscribe(data => this.movieList = data)
-    this.showForm = false;
+    this.showForm = false
   }
 
   getWatch() {

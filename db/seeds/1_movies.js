@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
       ]);
     }).then(() => {
       return knex.raw(
-        "SELECT setval('movies_id_seq', (SELECT MAX(id) FROM movies));"
+        'SELECT setval('movies_id_seq', (SELECT MAX(id) FROM movies));'
       );
     });
 };

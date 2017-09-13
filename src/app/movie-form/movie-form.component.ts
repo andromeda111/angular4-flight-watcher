@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { MoviesService } from '../services/movies.service';
+import { Component, Output, EventEmitter } from '@angular/core'
+import { MoviesService } from '../services/movies.service'
 
 @Component({
   selector: 'movie-form',
@@ -10,10 +10,10 @@ import { MoviesService } from '../services/movies.service';
 
 export class MovieFormComponent {
 
-  newMovie = {};
-  submitted = false;
+  newMovie = {}
+  submitted = false
 
-  @Output() getMovieList = new EventEmitter<string>();
+  @Output() getMovieList = new EventEmitter<string>()
 
   constructor(private moviesService: MoviesService) {}
 
