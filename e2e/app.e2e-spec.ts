@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular4-sandbox App', () => {
+describe('angular4-flight-watcher App', () => {
   let page: AppPage;
 
   beforeEach(() => {

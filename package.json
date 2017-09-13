@@ -1,14 +1,14 @@
 {
-  "name": "angular4-sandbox",
+  "name": "angular4-flight-watcher",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "startNG": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "startS": "node ./bin/www",
+    "start": "node ./bin/www",
     "knex": "knex"
   },
   "private": true,
